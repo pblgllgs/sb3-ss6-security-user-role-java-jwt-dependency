@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "0449ab57-128d-431e-b413-88cf2c509e76",
+		"name": "sb3-ss6-security-user-role-java-jwt",
+		"description": "[https://github.com/pblgllgs/sb3-ss6-security-user-role-java-jwt-dependency](https://github.com/pblgllgs/sb3-ss6-security-user-role-java-jwt-dependency)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17450698"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"admin@gmail.com\",\r\n    \"password\":\"pass\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"test1\",\r\n    \"email\":\"test1@gmail.com\",\r\n    \"password\":\"pass\",\r\n    \"mobileNumber\": \"{{$randomPhoneNumber}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0MUBnbWFpbC5jb20iLCJyb2xlcyI6WyJST0xFX1VTRVIiLCJST0xFX1VTRVIiXSwiZXhwIjoxNzExNDkwMTI4LCJpYXQiOjE3MTE0ODcxMjgsImp0aSI6ImE0Y2NjYzI3LTA3YjQtNDc0NS05MzMyLTg5NDE4OGYzYzdhZSJ9.6SoC39vcSjYS9hYNQgcwui1NDzT28akDvZ-0PRiW1iw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/demo/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"demo",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJyb2xlcyI6WyJST0xFX0FETUlOIiwiUk9MRV9BRE1JTiJdLCJleHAiOjE3MTE0OTAxNjUsImlhdCI6MTcxMTQ4NzE2NSwianRpIjoiNjU0NTk1ZDgtZTI0MC00Njc0LTkxOGYtNTYzN2EwNjRlMDZjIn0.jq4Cn8NCZ9EZUUFta5Yjx0cios_73IkQT9yUiLmg1qs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/demo/admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"demo",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
